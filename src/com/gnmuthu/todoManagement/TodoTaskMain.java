@@ -1,6 +1,8 @@
 package com.gnmuthu.todoManagement;
 
+
 import java.io.IOException;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -8,8 +10,9 @@ public class TodoTaskMain {
     public static void main(String[] args) throws IOException {
         TodoTaskList todoTask = new TodoTaskList();
         Scanner sc = new Scanner(System.in);
-        TodoTask task1 = new TodoTask(1, "complete console", LocalDate.of(2024, 05, 20), false);
-        TodoTask task2 = new TodoTask(2, "After console start Android", LocalDate.of(2024, 05, 21), false);
+//        DataInputStream dis=new DataInputStream(new DataInputStream(System.in));
+        TodoTask task1 = new TodoTask(1, "complete console", LocalDate.parse("2024-05-20"), false);
+        TodoTask task2 = new TodoTask(2, "After console start Android", LocalDate.parse("2024-05-21"), false);
         todoTask.addTask(task1);
         todoTask.addTask(task2);
         int choiceForTask;
@@ -22,14 +25,15 @@ public class TodoTaskMain {
             System.out.println("0. Exit");
             System.out.println("enter the Choice for Task performance");
             choiceForTask = sc.nextInt();
+            sc.nextLine();
             switch (choiceForTask) {
                 case 1:
                     System.out.println("Enter Task Description");
                     String taskDescription = sc.nextLine();
-                    sc.nextLine();
+                    System.out.println("Description"+ taskDescription);
                     System.out.println("Enter Due Date for Task (YYYY-MM-DD)");
-                    String DueDate = sc.nextLine().trim();
-                    LocalDate taskDueDate = LocalDate.parse(DueDate);
+                    String dueDate = sc.nextLine();
+                    LocalDate taskDueDate = LocalDate.parse(dueDate);
                     TodoTask newTodoTask = new TodoTask(todoTask.taskList.size() + 1, taskDescription, taskDueDate, false);
                     todoTask.addTask(newTodoTask);
                     System.out.println("Task Added");
@@ -42,7 +46,7 @@ public class TodoTaskMain {
                     break;
                 case 3:
                     System.out.println("Enter the task Id for Delete");
-                    int taskIdDelete = sc.nextInt();
+                    int taskIdDelete =sc.nextInt();
                     todoTask.deleteTask(taskIdDelete);
                     System.out.println("Task Removed from the List");
                     break;

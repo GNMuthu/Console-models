@@ -3,7 +3,6 @@ package com.gnmuthu.todoManagement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gnmuthu.todoManagement.TodoTask;
 
 public class TodoTaskList {
     TodoTaskList() {

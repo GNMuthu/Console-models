@@ -19,17 +19,6 @@ public class TodoTask {
         return taskId;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public LocalDate getTaskDueDate() {
-        return taskDueDate;
-    }
-
-    public boolean isTaskStatus() {
-        return taskStatus;
-    }
 
     public void setTaskStatus(boolean taskStatus) {
         this.taskStatus = taskStatus;
