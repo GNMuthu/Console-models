@@ -22,5 +22,6 @@ public class Publication
     public void putData()
     {
         System.out.println("Title :\t"+title+"\nAuthor Name:\t"+author+"\nVersion:\t"+version+"\nPrice:\t"+price);
+        System.out.println("welcome");
     }
 }
